@@ -261,4 +261,8 @@
     SwipeComponent.prototype.DEFAULT_DIRECTION = 'horizontal';
     SwipeComponent.prototype.THRESHOLD = 75;
     SwipeComponent.prototype.CANCEL_RANGE = 2;
+
+    if (typeof performance.now === 'undefined') {
+        performance.now = Date.now;
+    }
 }();
