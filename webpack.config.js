@@ -5,7 +5,8 @@ const dist = (fileName) => fileName === void 0 ? path('dist') : path('dist') + '
 module.exports = {
     mode: "production",
     entry: {
-        SwipeComponent: src('SwipeComponent.js')
+        SwipeComponent: src('SwipeComponent.js'),
+        SwipeComponentIESupport: src('SwipeComponentIESupport.js')
     },
     output: {
         path: dist(),

@@ -56,6 +56,8 @@
             }
         }
     }
+
+    var now = (performance.now === void 0 ? Date.now : performance.now.bind(performance));
     
     function SwipeComponent(props) {
         // functions
@@ -74,7 +76,7 @@
                 data.touchId = touch.identifier;
             }
 
-            data.swipe = performance.now();
+            data.swipe = now();
             data.posX = posX;
             data.posY = posY;
 
@@ -125,7 +127,7 @@
                 data.lastY = Math.abs(data.moveY - lastY);
     
                 data.distance = Math.max(Math.abs(data.moveX), Math.abs(data.moveY));
-                data.duration = performance.now() - data.swipe;
+                data.duration = now() - data.swipe;
                 data.direction = '';
                 if (data.moveX > 0) {
                     data.direction += 'right';
@@ -171,7 +173,7 @@
                     }
                 }
 
-                data.duration = performance.now() - data.swipe;
+                data.duration = now() - data.swipe;
     
                 endSwipe();
             }
